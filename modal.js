@@ -161,11 +161,11 @@ class ModalSuccess extends Modal {
     constructor() {
         super();
         this._color = "#006664";
-        fetch("./assets/checklist.svg")
-            .then(response => response.text())
-            .then(svg => {
-                this._icon = svg;
-            });
+        this._icon = `
+            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.40005 13L12.2 17L18.6 9.00005M13 24.2C6.81446 24.2 1.80005 19.1856 1.80005 13C1.80005 6.81446 6.81446 1.80005 13 1.80005C19.1856 1.80005 24.2 6.81446 24.2 13C24.2 19.1856 19.1856 24.2 13 24.2Z" stroke="white" stroke-width="3"/>
+            </svg>
+        `;
         this.render();
     }
 }
