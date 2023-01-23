@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="button-wrapper">
+        <button id="open-modal-success" class="success-button">Open Success Modal</button>
+        <button id="open-modal-alert" class="alert-button">Open Alert Modal</button>
+        <button id="open-modal-info" class="info-button">Open Info Modal</button>
+        <button id="open-modal-danger" class="danger-button">Open Danger Modal</button>
+    </div>
+
+    <!-- Modal Success -->
+    <jumat-modal-success id="modal-success">
+        <h4 slot="header">Dialog Title</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet
+            odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+        <div class="duplicate">
+            <input id="url" type="text" value="https://juraganmaterial.id/reset/fghjk7827hrhrjj3" />
+            <button id="copy">
+                <img src="./assets/copy.svg" alt='duplicate' />
+            </button>
+        </div>
+        <div slot="action">
+            <button class="secondary-button">Label</button>
+            <button id="close-modal-success" class="success-button">Close</button>
+        </div>
+    </jumat-modal-success>
+    <!-- End - Modal Success -->
+
+    <!-- Modal Alert -->
+    <jumat-modal-alert id="modal-alert">
+        <h4 slot="header">Dialog Title</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet
+            odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+        <div class="duplicate">
+            <input id="url2" type="text" value="https://juraganmaterial.id/reset/fghjk7827hrhrjj3" />
+            <button id="copy2">
+                <img src="./assets/copy.svg" alt='duplicate' />
+            </button>
+        </div>
+        <div slot="action">
+            <button class="secondary-button">Label</button>
+            <button class="secondary-button">Label</button>
+            <button id="close-modal-alert" class="alert-button">Close</button>
+        </div>
+    </jumat-modal-alert>
+    <!-- End - Modal Alert -->
+
+    <!-- Modal Info -->
+    <jumat-modal-info id="modal-info">
+        <h4 slot="header">Dialog Title</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet
+            odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+        <div class="duplicate">
+            <input id="url3" type="text" value="https://juraganmaterial.id/reset/fghjk7827hrhrjj3" />
+            <button id="copy3">
+                <img src="./assets/copy.svg" alt='duplicate' />
+            </button>
+        </div>
+        <div slot="action">
+            <button class="secondary-button">Label</button>
+            <button id="close-modal-info" class="info-button">Close</button>
+        </div>
+    </jumat-modal-info>
+    <!-- End - Danger Info -->
+
+    <!-- Modal Danger -->
+    <jumat-modal-danger id="modal-danger">
+        <h4 slot="header">Dialog Title</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet
+            odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+        <div class="duplicate">
+            <input id="url4" type="text" value="https://juraganmaterial.id/reset/fghjk7827hrhrjj3" />
+            <button id="copy4">
+                <img src="./assets/copy.svg" alt='duplicate' />
+            </button>
+        </div>
+        <div slot="action">
+            <button class="secondary-button">Label</button>
+            <button id="close-modal-danger" class="danger-button">Close</button>
+        </div>
+    </jumat-modal-danger>
+    <!-- End - Modal Danger -->
+
+    <script src="./modal.js"></script>
+    <script>
+        const copy = () => {
+            var copyText = document.querySelector("#url");
+            var copyButton = document.querySelector("#copy");
+            copyText.select();
+            document.execCommand("copy");
+        }
+
+        document.querySelector("#copy").addEventListener("click", copy);
+
+        const copy2 = () => {
+            var copyText = document.querySelector("#url2");
+            var copyButton = document.querySelector("#copy2");
+            copyText.select();
+            document.execCommand("copy");
+        }
+
+        document.querySelector("#copy2").addEventListener("click", copy2);
+
+        const copy3 = () => {
+            var copyText = document.querySelector("#url3");
+            var copyButton = document.querySelector("#copy3");
+            copyText.select();
+            document.execCommand("copy");
+        }
+
+        document.querySelector("#copy3").addEventListener("click", copy3);
+
+        const copy4 = () => {
+            var copyText = document.querySelector("#url4");
+            var copyButton = document.querySelector("#copy4");
+            copyText.select();
+            document.execCommand("copy");
+        }
+
+        document.querySelector("#copy4").addEventListener("click", copy4);
+    </script>
+    <script>
+        // Modal Success Handler
+        const openModalSuccess = document.getElementById('open-modal-success');
+        const closeModalSuccess = document.getElementById('close-modal-success');
+        const modalSuccess = document.getElementById('modal-success');
+        openModalSuccess.addEventListener('click', () => {
+            modalSuccess.open();
+        });
+        closeModalSuccess.addEventListener('click', () => {
+            modalSuccess.close();
+        });
+        // End - Modal Success Handler
+
+        // Modal Alert Handler
+        const openModalAlert = document.getElementById('open-modal-alert');
+        const closeModalAlert = document.getElementById('close-modal-alert');
+        const modalAlert = document.getElementById('modal-alert');
+        openModalAlert.addEventListener('click', () => {
+            modalAlert.open();
+        });
+        closeModalAlert.addEventListener('click', () => {
+            modalAlert.close();
+        });
+        // End - Modal Alert Handler
+
+        // Modal Info Handler
+        const openModalInfo = document.getElementById('open-modal-info');
+        const closeModalInfo = document.getElementById('close-modal-info');
+        const modalInfo = document.getElementById('modal-info');
+        openModalInfo.addEventListener('click', () => {
+            modalInfo.open();
+        });
+        closeModalInfo.addEventListener('click', () => {
+            modalInfo.close();
+        });
+        // End - Modal Info Handler
+
+        // Modal Danger Handler
+        const openModalDanger = document.getElementById('open-modal-danger');
+        const closeModalDanger = document.getElementById('close-modal-danger');
+        const modalDanger = document.getElementById('modal-danger');
+        openModalDanger.addEventListener('click', () => {
+            modalDanger.open();
+        });
+        closeModalDanger.addEventListener('click', () => {
+            modalDanger.close();
+        });
+        // End - Modal Danger Handler
+    </script>
+</body>
+
+</html>

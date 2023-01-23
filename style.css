@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  button {
+    position: relative;
+    padding: 10px 24px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0em;
+    border-radius: 5px;
+    border: none;
+    background-color: #FFF;
+    color: #1A2128;
+  }
+
+  button.success-button {
+    color: #FFF;
+    background-color: #006664;
+  }  
+
+  button.alert-button {
+    color: #FFF;
+    background-color: #8E601F;
+  }
+
+  button.info-button {
+    color: #FFF;
+    background-color: #0264AD;
+  }
+
+  button.danger-button {
+    color: #FFF;
+    background-color: #A74032;
+  }
+  
+  button.secondary-button {
+    color: #1A2128;
+  }
+
+  .duplicate {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .duplicate input {
+    width: 100%;
+    border: none;
+    background-color: #FFF;
+    color: #006664;
+    font-weight: 700;
+  }
