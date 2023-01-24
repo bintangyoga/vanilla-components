@@ -16,7 +16,6 @@ class Modal extends HTMLElement {
                 display: none; 
                 position: fixed; 
                 z-index: 1; 
-                padding-top: 100px;
                 left: 0;
                 top: 0;
                 width: 100%; 
@@ -26,16 +25,18 @@ class Modal extends HTMLElement {
             }
             .modal-content {
                 position: relative;
+                top: 50%;
+                transform: translateY(-50%);
                 background-color: #FFF;
                 max-width: 550px;
                 overflow: hidden;
                 border-radius: 5px;
                 margin: auto;
                 padding-bottom: 16px;
-                -webkit-animation-name: animatetop;
+                -webkit-animation-name: animateModal;
                 -webkit-animation-duration: 0.4s;
-                animation-name: animatetop;
-                animation-duration: 0.4s
+                animation-name: animateModal;
+                animation-duration: 0.2s
             }
             @media screen and (max-width: 768px) {
                 .modal-content {
@@ -43,13 +44,13 @@ class Modal extends HTMLElement {
                     margin-left: 12px;
                 }
             }
-            @keyframes animatetop {
-                from {top:-300px; opacity:0}
-                to {top:0; opacity:1}
+            @keyframes animateModal {
+                from {transform: scale(0.9) translateY(-50%); opacity:0;}
+                to {transform: scale(1) translateY(-50%); opacity:1;}
             }
-            @-webkit-keyframes animatetop {
-                from {top:-300px; opacity:0} 
-                to {top:0; opacity:1}
+            @-webkit-keyframes animateModal {
+                from {transform: scale(0.9) translateY(-50%); opacity:0;}
+                to {transform: scale(1) translateY(-50%); opacity:1;}
             }
             .modal-header {
                 position: relative;
@@ -133,10 +134,9 @@ class Modal extends HTMLElement {
 
     connectedCallback() {
         this._modal = this.shadowRoot.querySelector(".modal");
-        this.shadowRoot.querySelector(".open").addEventListener('click', this.open.bind(this));
-        this.shadowRoot.querySelector(".close").addEventListener('click', this.close.bind(this));
     }
     disconnectedCallback() {
+        this._modal = this.shadowRoot.querySelector(".modal");
         this.shadowRoot.querySelector(".open").removeEventListener('click', this.open);
         this.shadowRoot.querySelector(".close").removeEventListener('click', this.close);
     }
